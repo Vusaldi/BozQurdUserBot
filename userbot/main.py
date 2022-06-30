@@ -39,13 +39,13 @@ DIZCILIK_STR = [
 ]
 
 ALIVE_MESAJ = [
-    "**Canım Gözüm** {mention} ❤️ \n 🐺`BozQurd işləyir...`",
-    "😍**Səni unutdum sanma** {mention} 🐺`BozQurd işləyir...`",
-    "😈**Narahat olma** {mention} 🐺`BozQurd işləyir...`",
-    "🇦🇿🇹🇷 **Bizim Qanımız Türk Qanıdır** {mention} \n 🐺`BozQurd işləyir...`",
-    "{mention} **Bu** 🌹-ü **Səninçün Alp dağlarından gətirdim**😍 \n 🐺`BozQurd İşləyir...`",
-    "{mention} **Sən .alive yazarkən mən bunu səninçün hazırladım** (⊃｡•́‿•̀｡)⊃━✿✿✿✿✿✿ 😍\n🐺`BozQurd işləyir...`",
-    "{mention} **Gecə-Gündüz fasiləsiz xidmətindəyəm**😎\n🐺`BozQurd işləyir...`",
+    "**Canım Gözüm** {mention} ❤️ \n 𝗖𝗴𝘂𝗲𝘀 𝗨𝘀𝗲𝗿𝗯𝗼𝘁...⚡ işləyir...`",
+    "😍**Səni unutdum sanma** {mention} 𝗖𝗴𝘂𝗲𝘀 𝗨𝘀𝗲𝗿𝗯𝗼𝘁...⚡ işləyir...`",
+    "😈**Narahat olma** {mention} 𝗖𝗴𝘂𝗲𝘀 𝗨𝘀𝗲𝗿𝗯𝗼𝘁...⚡...`",
+    "🇦🇿🇹🇷 **Bizim Qanımız Türk Qanıdır** {mention} \n 𝗖𝗴𝘂𝗲𝘀 𝗨𝘀𝗲𝗿𝗯𝗼𝘁...⚡...`",
+    "{mention} **Bu** 🌹-ü **Səninçün Alp dağlarından gətirdim**😍 \n 𝗖𝗴𝘂𝗲𝘀 𝗨𝘀𝗲𝗿𝗯𝗼𝘁...⚡...`",
+    "{mention} **Sən .alive yazarkən mən bunu səninçün hazırladım** (⊃｡•́‿•̀｡)⊃━✿✿✿✿✿✿ 😍\n𝗖𝗴𝘂𝗲𝘀 𝗨𝘀𝗲𝗿𝗯𝗼𝘁...⚡...`",
+    "{mention} **Gecə-Gündüz fasiləsiz xidmətindəyəm**😎\n𝗖𝗴𝘂𝗲𝘀 𝗨𝘀𝗲𝗿𝗯𝗼𝘁...⚡ işləyir...`",
 ]
 
 AFKSTR = [
@@ -241,9 +241,9 @@ async def FotoDegistir (foto):
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Botunuz işleyir! Hansısa söhbete  .alive yazaraq Test ede bilersiz!."
-          " Kömeye ehtiyacınız varsa, destek qrupuna gelin: t.me/BozQurdSup")
-LOGS.info(f"Bot versiyası: BozQurd {BOZQURD_VERSION}")
+LOGS.info("Botunuz İşləyir! Hansısa Söhbətə  .alive yazaraq Test edə bilərsiniz!."
+          " Köməyə ehtiyacınız varsa, dəstək qrupuna gəlin: t.me/CguesSup")
+LOGS.info(f"Bot versiyası: 𝗖𝗴𝘂𝗲𝘀 𝗨𝘀𝗲𝗿𝗯𝗼𝘁...⚡ {CGUES_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):
