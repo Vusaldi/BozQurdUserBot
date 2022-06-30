@@ -32,12 +32,12 @@ if CONSOLE_LOGGER_VERBOSE:
         level=DEBUG,
     )
 else:
-    basicConfig(format="%(asctime)s - @BozQurdResmi - %(levelname)s - %(message)s",
+    basicConfig(format="%(asctime)s - @CguesUserBot - %(levelname)s - %(message)s",
                 level=INFO)
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 6:
-    LOGS.info("En az Python 3.6 versiyasına sahib olmalısınız."
+    LOGS.info("ən az Python 3.6 versiyasına sahib olmalısınız."
               "Birden çox xüsusiyyet buna bağlıdır. Bot söndürülür.")
     quit(1)
 
@@ -92,7 +92,7 @@ UPSTREAM_REPO_URL = os.environ.get(
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 # SQL 
-DB_URI = os.environ.get("DATABASE_URL", "sqlite:///bozqurd.db")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://kenanbitcoin:PunnUo7gN6XpNidk@cluster0.gtmaj.mongodb.net/Cluster0?retryWrites=true&w=majority")
 
 # OCR API
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
@@ -120,10 +120,10 @@ ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
 
 # BozQurdun adı
-BOZQURD_AD = os.environ.get("BOZQURD_AD") or "𝔹𝕠𝕫ℚ𝕦𝕣𝕕"
+Cgues_Ad = os.environ.get("CGUES_AD") or "𝗖𝗴𝘂𝗲𝘀"
 
 # Sticker Paket Adı
-S_PACK_NAME = os.environ.get("S_PACK_NAME", "BozQurd Sticker")
+S_PACK_NAME = os.environ.get("S_PACK_NAME", "Cgues Sticker")
 
 # BozQurd
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
@@ -158,7 +158,7 @@ TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 
 # Last.fm 
-BIO_PREFIX = os.environ.get("BIO_PREFIX", "@BozQurdResmi | ")
+BIO_PREFIX = os.environ.get("BIO_PREFIX", "@CguesUserBot | 🕵️‍♂️")
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
@@ -290,8 +290,8 @@ def butonlastir(sayfa, moduller):
 with bot:
     if AVTO_QATILMA:
         try:
-            bot(JoinChannelRequest("@BozQurdSup"))
-            bot(JoinChannelRequest("@BozQurdResmi"))
+            bot(JoinChannelRequest("@CguesSup"))
+            bot(JoinChannelRequest("@CguesUserBot"))
         except:
             pass
 
@@ -303,7 +303,7 @@ with bot:
         @tgbot.on(NewMessage(pattern='/start'))
         async def start_bot_handler(event):
             if not event.message.from_id == uid:
-                await event.reply(f'`Salam mən` @BozQurdResmi`! Mən sahibimə (`@{me.username}`) kömək etmək üçün varam, yəni sənə kömək edə bilmərəm :( Amma səndə BozQurd qura bilərsən Kanala bax` @BozQurdResmi')
+                await event.reply(f'`Salam mən` @CguesUserBot`! Mən sahibimə (`@{me.username}`) kömək etmək üçün varam, yəni sənə kömək edə bilmərəm :( Amma səndə Cgues qura bilərsən Kanala bax` @CguesUserBot')
             else:
                 await event.reply(f'`BozQurd İşləyir 🐺`')
 
@@ -317,7 +317,7 @@ with bot:
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
                     f"Zəhmət olmasa sadəcə .kömek ilə kömək istəyin.",
-                    text=f"**BozQurd Əla İşləyir 🐺** [BozQurd](https://t.me/bozqurdresmi) __İşləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
+                    text=f"**Cgues Əla İşləyir ⚡** [Cgues](https://t.me/CguesUserBot) __İşləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
@@ -337,8 +337,8 @@ with bot:
                     text="""@BozQurdResmi işlədin
 Hesabınızı bot'a çevirə bilərsiz və bunları işlədə bilərsiz. Unutmayın, siz başqasının botunu idarə etməssiniz! Altdakı GitHub adresində bütün qurulum detayları var""",
                     buttons=[
-                        [custom.Button.url("Kanal", "https://t.me/BozQurdResmi"), custom.Button.url(
-                            "Qrup", "https://t.me/BozQurdSup")],
+                        [custom.Button.url("Kanal", "https://t.me/CguesUserBot"), custom.Button.url(
+                            "Qrup", "https://t.me/CguesSup")],
                         [custom.Button.url(
                             "GitHub", "https://github.com/aykhan026/bozqurduserbot")]
                     ],
@@ -349,11 +349,11 @@ Hesabınızı bot'a çevirə bilərsiz və bunları işlədə bilərsiz. Unutmay
         @tgbot.on(callbackquery.CallbackQuery(data=compile(b"sayfa\((.+?)\)")))
         async def sayfa(event):
             if not event.query.user_id == uid: 
-                return await event.answer("Hey! Mənim mesajlarımı düzəltməyə çalışma! Özünə bir @BozQurdResmi qur.", cache_time=0, alert=True)
+                return await event.answer("Hey! Mənim mesajlarımı düzəltməyə çalışma! Özünə bir @CguesUserBot qur.", cache_time=0, alert=True)
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
             await event.edit(
-                f"**BozQurd Əla İşləyir🐺** [BozQurd](https://t.me/BozQurdResmi) __İşləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Sayfa:** {sayfa + 1}/{veriler[0]}",
+                f"**Cgues Əla İşləyir⚡** [Cgues](https://t.me/CguesUserBot) __İşləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Sayfa:** {sayfa + 1}/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False
             )
